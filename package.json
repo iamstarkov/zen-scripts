@@ -1,0 +1,32 @@
+{
+  "name": "@iamstarkov/zen-scripts",
+  "version": "1.0.5",
+  "description": "",
+  "main": "dist",
+  "files": [
+    "src",
+    "bin"
+  ],
+  "bin": {
+    "zen": "bin"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "github:slowoss/zen-scripts",
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slowoss/zen-scripts/issues"
+  },
+  "homepage": "https://github.com/slowoss/zen-scripts#readme",
+  "dependencies": {
+    "@babel/cli": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "execa": "^0.10.0",
+    "ora": "^2.1.0",
+    "rimraf": "^2.6.2"
+  }
+}
