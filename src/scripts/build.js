@@ -10,7 +10,6 @@ const build = async () => {
     `--config-file ${__dirname}/.babelrc.js`,
   ].join(" "));
 
-  console.log('BUILDUILDUILUILD')
   try {
     await execa.shell(`rimraf dist`);
     await execa.shell(`mkdirp dist/cjs dist/esm`);
