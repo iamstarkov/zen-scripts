@@ -15,6 +15,7 @@ const build = async () => {
   // console.log(cmd('env'))
   try {
     await execa.shell(`rimraf dist`);
+    await execa.shell(`mkdirp dist/cjs dist/esm`);
     await Promise.all([execa.shell(cmd("cjs")), execa.shell(cmd("esm"))]);
   } catch (e) {
     spinner.fail(`zen build failed with ${e}`);

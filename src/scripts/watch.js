@@ -19,6 +19,7 @@ const watch = async () => {
     ].join(" ");
   try {
     await execa.shell(`rimraf dist`);
+    await execa.shell(`mkdirp dist/cjs dist/esm`);
     const cjs = execa.shell(cmd("cjs"));
     const esm = execa.shell(cmd("esm"));
     // TODO: update spinner with latest changed file
