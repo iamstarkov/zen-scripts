@@ -25,6 +25,12 @@ const main = async () => {
     await watch();
     return;
   }
+
+  if (script === "doctor") {
+    const { doctor } = require("./scripts/doctor");
+    await doctor();
+    return;
+  }
 };
 
 
