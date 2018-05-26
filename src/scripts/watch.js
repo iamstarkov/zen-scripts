@@ -14,8 +14,6 @@ const watch = async () => {
       `babel src -d dist/${env}`,
       `--config-file ${__dirname}/.babelrc.js`,
       `--copy-files`,
-      `--ignore test.js,.md`,
-      `--watch`
     ].join(" ");
   try {
     await execa.shell(`rimraf dist`);

@@ -8,11 +8,9 @@ const build = async () => {
     `BABEL_ENV=${env}`,
     `babel src -d dist/${env}`,
     `--config-file ${__dirname}/.babelrc.js`,
-    `--copy-files`,
-    `--ignore test.js,.md`
   ].join(" "));
 
-  // console.log(cmd('env'))
+  console.log('BUILDUILDUILUILD')
   try {
     await execa.shell(`rimraf dist`);
     await execa.shell(`mkdirp dist/cjs dist/esm`);
