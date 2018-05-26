@@ -9,7 +9,14 @@ const watch = async () => {
     process.exit(0);
   });
   const cmd = env =>
-    `BABEL_ENV=${env} babel src -d dist/${env} --config-file ${__dirname}/.babelrc.js --watch`;
+    [
+      `BABEL_ENV=${env}`,
+      `babel src -d dist/${env}`,
+      `--config-file ${__dirname}/.babelrc.js`,
+      `--copy-files`,
+      `--ignore test.js,.md`,
+      `--watch`
+    ].join(" ");
   try {
     await execa.shell(`rimraf dist`);
     const cjs = execa.shell(cmd("cjs"));

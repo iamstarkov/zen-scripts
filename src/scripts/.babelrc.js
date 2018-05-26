@@ -11,10 +11,8 @@ module.exports = {
         modules: process.env.BABEL_ENV === "esm" ? false : undefined
         // debug: true,
       }
-    ]
+    ],
+    "@babel/preset-react"
   ],
-  plugins: [
-    "@babel/plugin-syntax-dynamic-import",
-  ],
-  ignore: ["**/*.test.js"]
+  plugins: ["@babel/plugin-syntax-dynamic-import"]
 };

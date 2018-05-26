@@ -4,8 +4,15 @@ const ora = require("ora");
 const build = async () => {
   const spinner = ora("zen build").start();
   const { cwd } = process;
-  const cmd = env =>
-    `BABEL_ENV=${env} babel src -d dist/${env} --config-file ${__dirname}/.babelrc.js`;
+  const cmd = env => ([
+    `BABEL_ENV=${env}`,
+    `babel src -d dist/${env}`,
+    `--config-file ${__dirname}/.babelrc.js`,
+    `--copy-files`,
+    `--ignore test.js,.md`
+  ].join(" "));
+
+  // console.log(cmd('env'))
   try {
     await execa.shell(`rimraf dist`);
     await Promise.all([execa.shell(cmd("cjs")), execa.shell(cmd("esm"))]);
@@ -16,4 +23,4 @@ const build = async () => {
   spinner.succeed(`zen build finished in ${process.uptime().toFixed(2)}s`);
 };
 
-exports.build = build
+exports.build = build;
