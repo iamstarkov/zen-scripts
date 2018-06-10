@@ -31,6 +31,12 @@ const main = async () => {
     await lint();
     return;
   }
+
+  if (script === "format") {
+    const { format } = require("./scripts/format");
+    await format();
+    return;
+  }
 };
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@iamstarkov/zen-scripts",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "main": "dist",
   "files": [
@@ -36,6 +36,7 @@
     "execa": "^0.10.0",
     "mkdirp": "^0.5.1",
     "ora": "^2.1.0",
+    "prettier": "^1.13.5",
     "rimraf": "^2.6.2"
   }
 }
