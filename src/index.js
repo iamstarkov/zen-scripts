@@ -25,6 +25,12 @@ const main = async () => {
     await watch();
     return;
   }
+
+  if (script === "lint") {
+    const { lint } = require("./scripts/lint");
+    await lint();
+    return;
+  }
 };
 
 
