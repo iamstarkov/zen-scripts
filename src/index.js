@@ -37,6 +37,12 @@ const main = async () => {
     await format();
     return;
   }
+
+  if (script === "commit") {
+    const { commit } = require("./scripts/commit");
+    await commit();
+    return;
+  }
 };
 
 
