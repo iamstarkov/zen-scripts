@@ -50,7 +50,7 @@ const main = async () => {
   }
 
   if (script === "test" && args[1] === 'ava') {
-    console.log(args);
+    // console.log(args);
     const { test } = require("./scripts/test-ava");
     await test();
     return;
