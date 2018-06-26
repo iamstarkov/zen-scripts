@@ -43,6 +43,12 @@ const main = async () => {
     await commit();
     return;
   }
+
+  if (script === "commitmsg") {
+    const { commitmsg } = require("./scripts/commitmsg");
+    await commitmsg();
+    return;
+  }
 };
 
 
