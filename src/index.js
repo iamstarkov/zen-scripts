@@ -9,7 +9,6 @@ process.on("unhandledRejection", err => {
 const { argv } = process;
 
 const args = argv.slice(2);
-// console.log(args);
 
 const [script] = args;
 
@@ -47,6 +46,12 @@ const main = async () => {
   if (script === "commitmsg") {
     const { commitmsg } = require("./scripts/commitmsg");
     await commitmsg();
+    return;
+  }
+
+  if (script === "test" && args[1] === 'ava') {
+    const { test } = require("./scripts/test-ava");
+    await test();
     return;
   }
 };
