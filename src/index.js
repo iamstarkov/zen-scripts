@@ -54,6 +54,12 @@ const main = async () => {
     await test();
     return;
   }
+
+  if (script === "tdd" && args[1] === 'ava') {
+    const { test } = require("./scripts/tdd-ava");
+    await test();
+    return;
+  }
 };
 
 
