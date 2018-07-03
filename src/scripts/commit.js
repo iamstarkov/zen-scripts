@@ -1,15 +1,13 @@
 const execa = require('execa');
 const ora = require('ora');
+const path = require('path');
+const bootstrap = require('commitizen/dist/cli/git-cz').bootstrap;
 
-const commit = async () => {
-  const spinner = ora('zen commit').start();
-  try {
-    await execa.shell('git-cz');
-  } catch (e) {
-    spinner.fail(`zen commit failed with ${e}`);
-    return;
-  }
-  spinner.succeed(`zen commit finished in ${process.uptime().toFixed(2)}s`);
+const commit = () => {
+  bootstrap({
+    cliPath: path.join(process.cwd(), 'node_modules', 'commitizen'),
+    config: { path: 'cz-conventional-changelog' } 
+  });
 };
 
 exports.commit = commit;
